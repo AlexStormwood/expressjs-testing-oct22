@@ -4,7 +4,9 @@
   "description": "Lesson repo for 3rd of June 2023",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+	"test-cc": "jest --coverage",
+	"start":"node src/index.js"
   },
   "keywords": [],
   "author": "",
