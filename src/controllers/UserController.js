@@ -38,7 +38,6 @@ router.post("/login", bodyHasEmail, bodyHasPassword, emailIsValid, errorCheck, (
 	response.json({
 		message:"Login success woooo!!"
 	});
-
 });
 
 module.exports = router;
