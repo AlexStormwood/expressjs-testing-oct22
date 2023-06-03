@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-	"test-cc": "jest --coverage",
-	"start":"node src/index.js"
+    "test-cc": "jest --coverage",
+    "start": "node src/index.js",
+	"dev":"nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "jest": "^29.5.0",
+    "nodemon": "^2.0.22",
     "supertest": "^6.3.3"
   },
   "jest": {

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const {bodyHasEmail, bodyHasPassword, emailIsValid} = require('../middleware/UserMiddleware');
+const { errorCheck } = require('../middleware/ErrorMiddleware');
 
 router.post("/signup", 
 	// app.use(express.json()) is here also
@@ -11,6 +12,8 @@ router.post("/signup",
 	emailIsValid,
 	// check for password
 	bodyHasPassword,
+	// If errors exist, respond with errors:
+	errorCheck,
 	(request, response) => {
 
 
@@ -28,6 +31,13 @@ router.post("/signup",
 	// } else {
 	// 	response.status(400).json({message:"Sign up failure!"});
 	// }
+
+});
+
+router.post("/login", bodyHasEmail, bodyHasPassword, emailIsValid, errorCheck, (request, response) => {
+	response.json({
+		message:"Login success woooo!!"
+	});
 
 });
 

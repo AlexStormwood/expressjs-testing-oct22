@@ -8,6 +8,26 @@ const app = express();
 // eg. request.body can have JSON data 
 app.use(express.json());
 
+// Debug error handling
+void process.on('unhandledRejection', (reason, p) => {
+	console.log(`Things got pretty major here! Big error:\n`+ JSON.stringify(p));
+	console.log(`That error happened because of:\n` + reason);
+});
+
+
+app.use((request, response, next) => {
+
+	request.errors = [];
+	next();
+
+	// if (request.errors) {
+	// 	next();
+	// } else {
+	// 	request.errors = [];
+	// 	next();
+	// }
+});
+
 app.get("/", (request, response) => {
 
 	response.json({
