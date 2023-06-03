@@ -4,8 +4,8 @@
   "description": "Lesson repo for 3rd of June 2023",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test-cc": "jest --coverage",
+    "test": "jest --detectOpenHandles",
+    "test-cc": "jest --coverage --detectOpenHandles",
     "start": "node src/index.js",
 	"dev":"nodemon src/index.js"
   },
