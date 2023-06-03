@@ -57,7 +57,7 @@ describe("User...", () => {
 				password:"blahblah"
 			});
 
-			expect(response.body).toEqual({message:"Sign up failure!"});
+			expect(response.body.errors).toEqual(["Email is not valid."]);
 			expect(response.statusCode).toEqual(400);
 		});
 
